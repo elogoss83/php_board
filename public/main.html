@@ -1,0 +1,44 @@
+<script>
+function chk() {
+    
+    var input_id = document.getElementById("getid");
+    var input_pass = document.getElementById("getpass");
+    
+    if ( input_id.value.length == 0 ) {
+        alert("[아이디]를 입력해주세요.");
+        input_id.focus();
+        return;
+    }
+    else if ( input_pass.value.length == 0 ) {
+        alert("[패스워드]를 입력해주세요.");
+        input_pass.focus();
+        return;
+    }
+
+    var id = input_id.value;
+    var pass = input_pass.value;
+    
+    location.href = 'idCheck.php?id='+id+'&pass='+pass;
+    
+    input_id.value = '';
+    input_pass.value = '';
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        아이디 : <input id = "getid" type="text" name="id" value=""></br>
+        비밀번호 : <input id = "getpass" type="password" name="pass" value=""></br>
+        <button onclick="chk();">로그인</button>
+        <input type="button" onclick ="location.href = 'doApply.html'" value="회원가입">
+        <input type="button" onclick ="location.href = 'beApply.html'" value="비회원">
+    </form>
+</body>
+</html>
